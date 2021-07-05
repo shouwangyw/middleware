@@ -18,6 +18,7 @@
   <modules>
     <module>00-mysql-common</module>
     <module>01-mysql-master-slave</module>
+    <module>02-mysql-data-sharding</module>
   </modules>
 
   <dependencies>
