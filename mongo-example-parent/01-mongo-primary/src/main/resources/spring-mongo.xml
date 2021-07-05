@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xmlns:context="http://www.springframework.org/schema/context"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans.xsd
+                    http://www.springframework.org/schema/context
+                    http://www.springframework.org/schema/context/spring-context.xsd
+                    http://www.springframework.org/schema/data/mongo
+                    http://www.springframework.org/schema/data/mongo/spring-mongo.xsd">
+  <!-- 加载mongodb的配置属性文件 -->
+  <context:property-placeholder location="classpath:mongo.properties"/>
+  <!-- 扫描持久层 -->
+  <context:component-scan base-package="com.yw.mongo.example.dao"/>
+  <!-- 配置mongodb客户端连接服务器的相关信息 -->
+  <mongo:mongo-client host="${mongo.host}" port="${mongo.port}" id="mongo">
+    <mongo:client-options write-concern="${mongo.writeconcern}" connect-timeout="${mongo.connectTimeout}"
+                          socket-keep-alive="${mongo.socketKeepAlive}"/>
+  </mongo:mongo-client>
+  <!-- 配置使用的数据库 -->
+  <mongo:db-factory id="mongoDbFactory" dbname="test" mongo-ref="mongo"/>
+  <!-- 配置mongodb的模板类：MongoTemplate -->
+  <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+    <constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
+  </bean>
+</beans>
