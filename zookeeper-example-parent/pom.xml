@@ -17,6 +17,7 @@
 
   <modules>
     <module>01-zookeeper-primary</module>
+    <module>02-publish-subscribe</module>
   </modules>
 
   <dependencies>
