@@ -18,6 +18,7 @@
   <modules>
     <module>01-zookeeper-primary</module>
     <module>02-publish-subscribe</module>
+    <module>03-distributed-lock</module>
   </modules>
 
   <dependencies>
