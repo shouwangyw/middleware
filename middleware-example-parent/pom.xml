@@ -21,6 +21,8 @@
     <module>01-mysql-data-sharding</module>
     <module>02-redis-demo</module>
     <module>03-mongo-demo</module>
+    <module>04-kafka-demo</module>
+    <module>04-kafka-springboot</module>
   </modules>
 
   <dependencies>
