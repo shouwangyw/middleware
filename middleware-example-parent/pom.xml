@@ -25,6 +25,7 @@
     <module>04-kafka-springboot</module>
     <module>05-elasticsearch-demo</module>
     <module>05-logstash-demo</module>
+    <module>06-fastdfs-demo</module>
   </modules>
 
   <dependencies>
