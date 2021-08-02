@@ -10,7 +10,7 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>04-kafka-springboot</artifactId>
+  <artifactId>05-elasticsearch-demo</artifactId>
 
   <properties>
     <spring-boot.version>2.1.5.RELEASE</spring-boot.version>
@@ -30,33 +30,39 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.yw.middleware.example</groupId>
-      <artifactId>00-middleware-common</artifactId>
-      <version>1.0</version>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
+
+    <!--spring-es-->
     <dependency>
-      <groupId>org.springframework.kafka</groupId>
-      <artifactId>spring-kafka</artifactId>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-elasticsearch</artifactId>
     </dependency>
 
-    <!-- kafka依赖 -->
     <dependency>
-      <groupId>org.apache.kafka</groupId>
-      <artifactId>kafka_2.12</artifactId>
-      <version>1.1.1</version>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
   <build>
     <plugins>
+      <!-- 配置Maven的JDK编译级别 -->
       <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.2</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
       </plugin>
     </plugins>
   </build>

@@ -23,6 +23,8 @@
     <module>03-mongo-demo</module>
     <module>04-kafka-demo</module>
     <module>04-kafka-springboot</module>
+    <module>05-elasticsearch-demo</module>
+    <module>05-logstash-demo</module>
   </modules>
 
   <dependencies>

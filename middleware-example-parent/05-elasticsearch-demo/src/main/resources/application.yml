@@ -1,0 +1,9 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: es-demo
+  data:
+    elasticsearch:
+      cluster-name: yw-es
+      cluster-nodes: 192.168.254.120:9300,192.168.254.102:9300,192.168.254.104:9300
